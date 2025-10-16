@@ -4,7 +4,7 @@
 This document records the process of removing the `wp-config.php` file from the entire git history while preserving the local working copy.
 
 ## Using
- `git filter-repo` 
+ `git filter-repo`  - [docs](https://www.git-tower.com/learn/git/faq/git-filter-repo)
 
 ## Commands Executed
 
@@ -15,7 +15,7 @@ git stash push -m "Stash before removing wp-config from history"
 
 ### 2. Remove wp-config.php from All History
 ```bash
-git filter-repo --invert-paths --path wp-config.php --force
+git filter-repo --path wp-config.php --invert-paths --force
 ```
 
 ### 3. Restore Working Directory Changes
@@ -28,8 +28,7 @@ git stash pop
 cp wp-config-old.php wp-config.php
 ```
 
-## File Status After Process
-- `wp-config.php`: Untracked (local only)
-- `wp-config-old.php`: Untracked backup
-- `wp-config-ddev.php`: Untracked development config
-- `wp-config-sample.php`: Modified (tracked)
+### 5. Push
+```
+git push --force
+```
