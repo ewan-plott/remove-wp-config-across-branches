@@ -6,7 +6,8 @@ This document records the process of removing the `wp-config.php` file from the 
 ## Using
  `git filter-repo`  - [docs](https://www.git-tower.com/learn/git/faq/git-filter-repo)
 
-## Commands Executed
+## Commands
+_it is recommended to rename your ```wp-config.phg``` and then proceed to stash_
 
 ### 1. Stash Current Changes
 ```bash
